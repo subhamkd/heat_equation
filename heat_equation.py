@@ -47,3 +47,36 @@ def heat_equation(T,dx,dy,alpha,dt,nt,TBCs):
 
         heatBC(TLeft,TRight,TTop,TBottom,T,dx,dy)
     return T
+
+"""def heatBC(a,b,c,d,T,dx,dy):
+    #left
+    if a[0]=='N':
+        T[0,:]=a[1]*dy+T[1, :]
+    elif a[0]=='D':
+        T[0,:]=a[1]
+    else:
+        return('Please enter a valid BC type')
+
+    if b[0]=='N':
+        T[-1,:]=b[1]*dy+T[-2, :]
+    elif b[0]=='D':
+        T[-1,:]=b[1]
+    else:
+        return('Please enter a valid BC type')
+
+    #top
+    if c[0]=='N':
+        T[:, -1]=c[1]*dx+T[:, -2]
+    elif c[0]=='D':
+        T[:, -1]=c[1]
+    else:
+        return('Please enter a valid BC type')
+
+    #bottom
+    if d[0]=='N':
+        T[:, 0]=d[1]*dx+T[:, 1]
+    elif d[0]=='D':
+        T[:, 0]=d[1]
+    else:
+        return('Please enter a valid BC type')
+"""
