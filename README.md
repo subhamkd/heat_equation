@@ -1,2 +1,3 @@
 # heat_equation
-Solving the transient heat equation using finite differences in python
+Python script for solving the transient heat equation using finite difference method.
+Discretization scheme used : FTCS
