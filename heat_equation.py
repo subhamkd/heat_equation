@@ -2,6 +2,10 @@
 import numpy as np
 
 def heatBC(a,b,c,d,T,dx,dy):
+    
+    # 'N' refers to Neumann boundary condition where the heat flux is specified on the boundary
+    # 'D' refers to Dirichlet boundary condition where the temperature is specified on the boundary
+
     #left
     if a[0]=='N':
         T[:, 0]=a[1]*dx+T[:, 1]
