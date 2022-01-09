@@ -1,5 +1,6 @@
 #solving the heat equation using finite difference method
 import numpy as np
+from tqdm import tqdm
 
 def heatBC(a,b,c,d,T,dx,dy):
     
@@ -40,7 +41,7 @@ def heatBC(a,b,c,d,T,dx,dy):
 
 def heat_equation(T,dx,dy,alpha,dt,nt,TBCs):
     Tn = np.empty_like(T)
-    for n in range(nt):
+    for n in tqdm(range(nt)):
         Tn = T.copy()
         T[1:-1,1:-1]=Tn[1:-1,1:-1]+(alpha*dt/dx**2)*(Tn[2:,1:-1]-2*Tn[1:-1,1:-1]+Tn[0:-2,1:-1])+(alpha*dt/dy**2)*(Tn[1:-1,2:]- 2 * Tn[1:-1, 1:-1] + Tn[1:-1, 0:-2])
         
