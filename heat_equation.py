@@ -39,12 +39,17 @@ def heatBC(a,b,c,d,T,dx,dy):
         return('Please enter a valid BC type')
 
 
-def heat_equation(T,dx,dy,alpha,dt,nt,TBCs):
+def heat_equation(T,dx,dy,alpha,dt,ds,nt,TBCs):
     Tn = np.empty_like(T)
+    i=0
     for n in tqdm_notebook(range(nt)):
         Tn = T.copy()
+        i=i+1
         T[1:-1,1:-1]=Tn[1:-1,1:-1]+(alpha*dt/dx**2)*(Tn[2:,1:-1]-2*Tn[1:-1,1:-1]+Tn[0:-2,1:-1])+(alpha*dt/dy**2)*(Tn[1:-1,2:]- 2 * Tn[1:-1, 1:-1] + Tn[1:-1, 0:-2])
         
+        if ((n+1)%ds==0):
+            np.savetxt('T'+str(i)+'.csv', T, delimiter=',')
+
         TLeft=TBCs[0]
         TRight=TBCs[1]
         TTop=TBCs[2]
