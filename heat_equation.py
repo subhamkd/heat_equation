@@ -1,6 +1,8 @@
 #solving the heat equation using finite difference method
 import numpy as np
 from tqdm.notebook import tqdm_notebook
+import shutil
+import os
 
 def heatBC(a,b,c,d,T,dx,dy):
     
@@ -57,6 +59,21 @@ def heat_equation(T,dx,dy,alpha,dt,ds,nt,TBCs):
 
         heatBC(TLeft,TRight,TTop,TBottom,T,dx,dy)
     return T
+
+def clearResults():
+    shutil.rmtree('./Results')
+    
+    fileList=os.listdir('./')
+    
+    if os.path.isdir('./Results'):
+        pass
+    else:
+        os.mkdir("Results")
+    
+    for file in fileList:
+        if file.endswith('.csv'):
+            shutil.move(file,'Results/.')
+
 
 """def heatBC(a,b,c,d,T,dx,dy):
     #left
