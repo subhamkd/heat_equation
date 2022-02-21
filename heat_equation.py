@@ -61,14 +61,13 @@ def heat_equation(T,dx,dy,alpha,dt,ds,nt,TBCs):
     return T
 
 def clearResults():
-    shutil.rmtree('./Results')
-    
     fileList=os.listdir('./')
     
     if os.path.isdir('./Results'):
-        pass
+        shutil.rmtree('./Results')
+        os.mkdir('Results')
     else:
-        os.mkdir("Results")
+        os.mkdir('Results')
     
     for file in fileList:
         if file.endswith('.csv'):
