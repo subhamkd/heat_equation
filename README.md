@@ -6,7 +6,9 @@ The saved results are used to make an animation of the transient behaviour, whic
 ## Heated Square example
 simulating the heat distribution in a 1x1 square domain initially at 300K, with the top and right boundry maintained at 100K.  
 
-![](https://github.com/subhamkd/heat_equation/blob/main/Results/Result.gif)
+![](https://github.com/subhamkd/heat_equation/blob/main/Gifs/randomHeated.gif)
 
 ## Random heated square example
 Simulating a square with different temperatures at different points (between 0 and 300), with insulated boundaries and letting the temperature distribution go towards equilibrium.
+
+![](https://github.com/subhamkd/heat_equation/blob/main/Gifs/SolidSquare.gif)
