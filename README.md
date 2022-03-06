@@ -4,7 +4,7 @@ The script uses explicit forward euler time stepping with central differencing f
 The saved results are used to make an animation of the transient behaviour, which is saved as a gif in the __Results__ folder
 
 ## Heated Square example
-simulating the heat distribution in a 1x1 square domain initially at 300K, with the top and right boundry at maintained at 100K.  
+simulating the heat distribution in a 1x1 square domain initially at 300K, with the top and right boundry maintained at 100K.  
 
 ![](https://github.com/subhamkd/heat_equation/blob/main/Results/Result.gif)
 
